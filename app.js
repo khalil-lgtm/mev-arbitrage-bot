@@ -30,7 +30,7 @@ function row(opp, i) {
 async function load() {
   STATUS.textContent = 'loading…';
   try {
-    const res = await fetch('opportunities.json', { cache: 'no-store' });
+    const res = await fetch('opportunities.jsonl', { cache: 'no-store' });
     if (!res.ok) throw new Error(res.status);
     const text = await res.text();
     let items = parseOpportunities(text);
