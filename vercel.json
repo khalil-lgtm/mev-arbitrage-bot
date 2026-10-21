@@ -1,7 +1,9 @@
 {
   "version": 2,
-  "rewrites": [
-    { "source": "/", "destination": "/dashboard/" }
+  "builds": [
+    { "src": "dashboard/**", "use": "@vercel/static" }
   ],
-  "cleanUrls": false
+  "routes": [
+    { "src": "/(.*)", "dest": "/dashboard/$1" }
+  ]
 }
