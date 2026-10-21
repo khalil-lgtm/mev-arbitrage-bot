@@ -36,7 +36,7 @@ async fn main() -> Result<()> {
     );
 
     metrics::init_metrics_server(config.cli.metrics_port)?;
-    let db = Arc::new(Database::open("./pnl.sqlite")?);
+    let db = Arc::new(Database::open().await?);
     let decimals_cache = new_decimals_cache();
 
     let anchor_tokens: Vec<Address> = vec![
@@ -125,7 +125,7 @@ async fn main() -> Result<()> {
         let mut interval = tokio::time::interval(std::time::Duration::from_secs(10));
         loop {
             interval.tick().await;
-            let pnl = db_cb.rolling_pnl(config_cb.circuit_breaker_window_minutes);
+            let pnl = db_cb.rolling_pnl(config_cb.circuit_breaker_window_minutes).await;
             mev_arbitrage_bot::metrics::set_rolling_pnl_eth(pnl as f64 / 1e18);
             if pnl < -(config_cb.circuit_breaker_max_loss_wei as i128) {
                 tracing::error!(pnl, "CIRCUIT BREAKER TRIPPED - halting execution");
@@ -344,7 +344,7 @@ async fn process_opportunity(
         sim_result.gas_used,
         best_route.num_hops(),
         &format!("{:?}", best_route.base_token),
-    );
+    ).await;
     mev_arbitrage_bot::metrics::record_profit_eth(net.to::<u128>() as f64 / 1e18);
 
     Ok(())
