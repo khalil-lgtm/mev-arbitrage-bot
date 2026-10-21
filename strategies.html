@@ -18,6 +18,8 @@
     .kpi .cell { background: #121829; border: 1px solid #1e2539; border-radius: 8px; padding: 10px 14px; min-width: 130px; }
     .kpi .cell .k { font-size: 22px; color: var(--accent); }
     .kpi .cell .l { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .04em; }
+    .banner { background: #1e2539; border: 1px solid #334159; border-radius: 8px; padding: 9px 12px; color: #9ca3af; font-size: 12px; margin-top: 12px; }
+    .banner code { background: #0b1020; padding: 1px 5px; border-radius: 4px; color: #cbd5e1; }
     table { width: 100%; border-collapse: collapse; margin-top: 16px; }
     th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid #1e2539; font-size: 13px; }
     th { color: var(--muted); text-transform: uppercase; font-size: 11px; letter-spacing: .04em; }
@@ -40,6 +42,8 @@
     <a href="index.html">Opportunities</a>
     <a href="strategies.html" class="active">Strategies</a>
   </nav>
+
+  <div class="banner">Demo mode: sample opportunities from <code>opportunities.jsonl</code>. To show live data, run the searcher (<code>OPPS_EXPORT_FILE=opportunities.jsonl ./target/release/mev-engine</code>) and redeploy, or open <code>?src=URL</code> with your live JSONL feed.</div>
 
   <div class="kpi">
     <div class="cell"><div class="k" id="k-strat">—</div><div class="l">Strategies</div></div>

@@ -37,6 +37,8 @@
     nav a.active { color: #22c55e; }
     button { background: #0ea5e9; color:#fff; border:0; border-radius:6px; padding:6px 12px; font-size:13px; cursor:pointer; }
     button:hover { opacity:.9; }
+    .banner { background: #1e2539; border: 1px solid #334159; border-radius: 8px; padding: 9px 12px; color: #9ca3af; font-size: 12px; margin-top: 12px; }
+    .banner code { background: #0b1020; padding: 1px 5px; border-radius: 4px; color: #cbd5e1; }
   </style>
 </head>
 <body>
@@ -49,11 +51,12 @@
       <span class="refresh" id="status">loading…</span>
       <button onclick="load()">Refresh</button>
     </div>
-    </header>
+     </header>
     <nav>
       <a href="index.html" class="active">Opportunities</a>
       <a href="strategies.html">Strategies</a>
     </nav>
+    <div class="banner" id="banner">Demo mode: sample opportunities from <code>opportunities.jsonl</code>. To show live data, run the searcher (<code>OPPS_EXPORT_FILE=opportunities.jsonl ./target/release/mev-engine</code>) and redeploy, or open <code>?src=URL</code> with your live JSONL feed.</div>
     <table id="table">
     <thead>
       <tr>

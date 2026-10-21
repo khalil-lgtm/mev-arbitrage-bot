@@ -14,10 +14,12 @@ function fmtAge(tsISO, now = Date.now()) {
   return `${h}h ${m}m ago`;
 }
 
+const SRC = new URLSearchParams(location.search).get('src') || 'opportunities.jsonl';
+
 async function load() {
   STATUS.textContent = 'loading…';
   try {
-    const res = await fetch('opportunities.jsonl', { cache: 'no-store' });
+    const res = await fetch(SRC, { cache: 'no-store' });
     if (!res.ok) throw new Error(res.status);
     const text = await res.text();
     const items = parseJSONL(text);
