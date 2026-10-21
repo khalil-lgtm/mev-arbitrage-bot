@@ -35,3 +35,4 @@ node_modules/
 # Profiling
 perf.data
 flamegraph.svg
+.vercel

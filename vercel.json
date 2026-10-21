@@ -1,4 +1,7 @@
 {
   "version": 2,
-  "rootDirectory": "dashboard"
+  "rewrites": [
+    { "source": "/", "destination": "/dashboard/" }
+  ],
+  "cleanUrls": false
 }
