@@ -36,6 +36,11 @@ async fn main() -> Result<()> {
     );
 
     metrics::init_metrics_server(config.cli.metrics_port)?;
+    if let Some(path) = std::env::var("OPPS_EXPORT_FILE").ok() {
+        mev_arbitrage_bot::export::init(path);
+    } else {
+        mev_arbitrage_bot::export::init("opportunities.jsonl");
+    }
     let db = Arc::new(Database::open("./pnl.sqlite")?);
     let decimals_cache = new_decimals_cache();
 
@@ -346,6 +351,17 @@ async fn process_opportunity(
         &format!("{:?}", best_route.base_token),
     );
     mev_arbitrage_bot::metrics::record_profit_eth(net.to::<u128>() as f64 / 1e18);
+
+    // Export to dashboard-facing JSON log (fire-and-forget).
+    let rec = mev_arbitrage_bot::export::build_record(
+        opportunity.tx_hash,
+        &format!("{}", opportunity.protocol),
+        best_route,
+        sim_result.gross_profit,
+        sim_result.optimal_loan_size,
+        net,
+    );
+    mev_arbitrage_bot::export::append(&rec);
 
     Ok(())
 }

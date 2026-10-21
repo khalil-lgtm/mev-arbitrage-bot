@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MEV Bot — Opportunities Found</title>
+  <meta name="color-scheme" content="dark" />
+  <style>
+    :root {
+      background: #0b1020;
+      card: #121829;
+      text: #e5e7eb;
+      muted: #9ca3af;
+      accent: #22c55e;
+      danger: #ef4444;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-monaco, SFMono-Regular, Menlo, Consolas, monospace;
+      background: var(--background);
+      color: var(--text);
+      padding: 24px;
+    }
+    h1 { font-size: 18px; margin: 0 0 4px; }
+    header { display: flex; align-items: baseline; justify-content: space-between; }
+    .sub { color: var(--muted); font-size: 13px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+    th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid #1e2539; font-size: 13px; }
+    th { color: var(--muted); text-transform: uppercase; font-size: 11px; letter-spacing: .04em; }
+    tr:hover td { background: #161d31; }
+    .pill { font-size: 11px; padding: 2px 8px; border-radius: 999px; }
+    .profit { color: var(--accent); }
+    .empty { color: var(--muted); padding: 24px; text-align: center; }
+    .refresh { color: var(--muted); font-size: 13px; }
+    button { background: #0ea5e9; color:#fff; border:0; border-radius:6px; padding:6px 12px; font-size:13px; cursor:pointer; }
+    button:hover { opacity:.9; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>MEV Arbitrage — Opportunities Found</h1>
+      <div class="sub">Live feed of profitable routes discovered by the searcher</div>
+    </div>
+    <div>
+      <span class="refresh" id="status">loading…</span>
+      <button onclick="load()">Refresh</button>
+    </div>
+  </header>
+  <table id="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Time (UTC)</th>
+        <th>Tx</th>
+        <th>Protocol</th>
+        <th>Hops</th>
+        <th>Base Token</th>
+        <th>Gross Profit (ETH)</th>
+        <th>Loan Size (ETH)</th>
+        <th>Confidence</th>
+        <th>Pools</th>
+      </tr>
+    </thead>
+    <tbody id="body"></tbody>
+  </table>
+  <script src="app.js"></script>
+</body>
+</html>

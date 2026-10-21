@@ -1,0 +1,47 @@
+[
+  {
+    "ts": "2026-10-21T21:33:10Z",
+    "tx_hash": "0x4d2a3c7e8b1f6e9d0a5c4b3a2f1e0d9c8b7a6f5e4d3c2b1a0987654321fedcba",
+    "protocol": "UniswapV3",
+    "hops": 3,
+    "base_token": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "gross_profit_eth": 0.047210,
+    "optimal_loan_eth": 1120.0000,
+    "confidence": 0.92,
+    "pools": [
+      "0x8ad599c3a0c00a8a8d21f314b7b5b2a4c4fe1a1c",
+      "0x45dda9533788b801d0dd6e661dbaedbc1174a0d5",
+      "0xb4fbf2e19a21d7fc2b73c7a788a0c1b9c8d1c1a7"
+    ]
+  },
+  {
+    "ts": "2026-10-21T21:31:45Z",
+    "tx_hash": "0x9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9876",
+    "protocol": "UniswapV2",
+    "hops": 2,
+    "base_token": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "gross_profit_eth": 0.019832,
+    "optimal_loan_eth": 480.5000,
+    "confidence": 0.71,
+    "pools": [
+      "0xb4fbf2e19a21d7fc2b73c7a788a0c1b9c8d1c1a7",
+      "0x0d4ad556f93f5b7a4e3c1d2b0a987654321fedcba"
+    ]
+  },
+  {
+    "ts": "2026-10-21T21:29:18Z",
+    "tx_hash": "0x1b0a987654321fedcba9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b2a1f0e9d8c7b",
+    "protocol": "SushiswapV2",
+    "hops": 4,
+    "base_token": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "gross_profit_eth": 0.003154,
+    "optimal_loan_eth": 22000.0000,
+    "confidence": 0.55,
+    "pools": [
+      "0x1d2034f7b8c1a9e0d6b58a7c3f2e1d0c9b8a7f6e5",
+      "0x2c1f43ed8a5b6f9e0c8a6d7b3e2f1a0d9c8b7a6f5",
+      "0x3d0f9e8a7b6c5d4e3f2a1b0c9d8e7f6a5b4c3d2e1",
+      "0x4c0a8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b2a1f0"
+    ]
+  }
+]
