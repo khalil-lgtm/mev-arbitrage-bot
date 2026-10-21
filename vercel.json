@@ -1,6 +1,6 @@
 {
   "version": 2,
   "builds": [
-    { "src": "{index.html,app.js,opportunities.jsonl}", "use": "@vercel/static" }
+    { "src": "{index.html,app.js,strategies.html,strategies.js,opportunities.jsonl}", "use": "@vercel/static" }
   ]
 }

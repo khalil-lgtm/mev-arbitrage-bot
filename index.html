@@ -33,6 +33,8 @@
     .profit { color: var(--accent); }
     .empty { color: var(--muted); padding: 24px; text-align: center; }
     .refresh { color: var(--muted); font-size: 13px; }
+    nav a, nav a:visited { color: #9ca3af; text-decoration: none; margin-right: 16px; font-size: 13px; }
+    nav a.active { color: #22c55e; }
     button { background: #0ea5e9; color:#fff; border:0; border-radius:6px; padding:6px 12px; font-size:13px; cursor:pointer; }
     button:hover { opacity:.9; }
   </style>
@@ -47,8 +49,12 @@
       <span class="refresh" id="status">loading…</span>
       <button onclick="load()">Refresh</button>
     </div>
-  </header>
-  <table id="table">
+    </header>
+    <nav>
+      <a href="index.html" class="active">Opportunities</a>
+      <a href="strategies.html">Strategies</a>
+    </nav>
+    <table id="table">
     <thead>
       <tr>
         <th>#</th>
